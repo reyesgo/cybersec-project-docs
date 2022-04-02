@@ -23,6 +23,8 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- a Load balance is 
+- the Advantage of a jumb box is that it provides another layer in the defense in depth approach. The concept of a jump box is a security hardened single point to out network. It acts as a bridge between to trusted systems in the network.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_
@@ -67,7 +69,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![screenshot of docker ps output](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-container.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:

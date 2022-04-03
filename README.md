@@ -26,9 +26,11 @@ Load balancing ensures that the application will be highly available, in additio
 - The use of a Load balancer is to prevent a server from overloading by distributing the flow of traffic across all available servers. Another benefit of a load balancer is that it can run SSL off-loading to repel a DDoS attack by forwarding all SSL based encryption to a dedicated server to decrypt incoming traffic and then forward the unencrypted traffic to the available web servers to relieve them from using its resources to decrypt the data.  
 - the Advantage of a jumb box is that it provides another layer in the defense in depth approach. The concept of a jump box is a security hardened single point to our network. It acts as a bridge between two trusted systems in the network.  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system and system files.
-- _TODO: What does Filebeat watch for?_ collects data about the file system
-- _TODO: What does Metricbeat record?_ collects machine metrics, such as uptime.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system.
+
+- Filebeat monitors and collects System changes such as system log events, sudo command events, SSH login attempts, and the creating of new users and groups and forwards them to the ELK server to be analysed via our Kibana web interface. 
+- Metricbeat monitors and collects information of the overall health of our docker contained web servers such as system, host and container metrics that we can also analyse via Kibana. 
+
 
 The configuration details of each machine may be found below.
 
@@ -44,18 +46,19 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 23.81.114.222
+- 23.81.114.222 - personal laptop
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the container in the jump box.
+- The ansible container is the only machine that can access all other virtual machines in the network such as the 2 web servers and the ELK server via asymmetric encryption.
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 23.81.114.222:22     |
+| Web-1    | Yes                 | 23.81.114.222:80     |
+| Web-2    | Yes                 | 23.81.114.222:80     |
+| ELK      | Yes                 | 23.81.114.222:5601   |
 
 ### Elk Configuration
 

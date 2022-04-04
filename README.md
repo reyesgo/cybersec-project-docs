@@ -66,9 +66,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - _TODO: What is the main advantage of automating configuration with Ansible?_
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- first step is to install docker.io the 
-- ...
+- first step is to install docker.io to download the package containing the docker platform to our system. 
+- next step we download python3-pip used for installing and managing python images/packages.
+- next we install the docker engine that will house all our containers. this is were we will install our ELK image.
+- next we will create a rule to allocate the required amount of virtual memory for the ELK stack to perform as intended.
+- lastly we download and install the elk image and configure it so that it is enabled on system boot.  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 

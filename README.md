@@ -26,11 +26,10 @@ Load balancing ensures that the application will be highly available, in additio
 - The use of a Load balancer is to prevent a server from overloading by distributing the flow of traffic across all available servers. Another benefit of a load balancer is that it can run SSL off-loading to repel a DDoS attack by forwarding all SSL based encryption to a dedicated server to decrypt incoming traffic and then forward the unencrypted traffic to the available web servers to relieve them from using its resources to decrypt the data.  
 - the Advantage of a jumb box is that it provides another layer in the defense in depth approach. The concept of a jump box is a security hardened single point to our network. It acts as a bridge between two trusted systems in the network.  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system. we use the following beats to accomplish this task:
 
-- Filebeat monitors and collects System changes such as system log events, sudo command events, SSH login attempts, and the creating of new users and groups and forwards them to the ELK server to be analysed via our Kibana web interface. 
-- Metricbeat monitors and collects information of the overall health of our docker contained web servers such as system, host and container metrics that we can also analyse via Kibana. 
-
+ -  Filebeat monitors the log files and forwards them to ELK server to be indexed.
+ -  Metricbeat collects metrics from the operating system and from services running on the server to be analysed.
 
 The configuration details of each machine may be found below.
 
@@ -88,15 +87,17 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+- Filebeat monitors and collects System changes such as system log events, sudo command events, SSH login attempts, and the creating of new users and groups and forwards them to the ELK server to be analysed via our Kibana web interface. 
+- Metricbeat monitors and collects information of the overall health of our docker contained web servers such as system, host and container metrics that we can also analyse via the Kibana web interface.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the host file to /etc/ansible.
+- Update the host file to include the IP address of remote hosts.
+- Run the playbook, and navigate to the remote host machine to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_

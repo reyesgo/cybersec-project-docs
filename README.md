@@ -103,7 +103,6 @@ SSH into the control node and follow the steps below:
 
 - When using the various playbooks the hosts field in the playbook needs to be modified to specify the group of remote hosts to be modified by the commands written within the playbook. Another step to keep in mind is to update the hosts file to specify the group of machines in your environment to be affected by a playbook.   
 
-- 
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Kibana can be accessed through your locak browser by navigating to the ELK servers public IP address through port 5601.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

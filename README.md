@@ -99,9 +99,11 @@ SSH into the control node and follow the steps below:
 - Update the host file to include the IP address of remote hosts.
 - Run the playbook, and navigate to the remote host machine to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- All files with the .yml extension are our playbooks, they are all located in the Playbook folder in our repository. when copying these files over to a control machine they will need to be stored in the /etc/ansible folder.
+
+- When using the various playbooks the hosts field in the playbook needs to be modified to specify the group of remote hosts to be modified by the commands written within the playbook. Another step to keep in mind is to update the hosts file to specify the group of machines in your environment to be affected by a playbook.   
+
+- 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

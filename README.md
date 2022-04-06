@@ -61,8 +61,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it increases efficiency and allows us to quickly scale our environment through the use of playbooks. For example, if we want to install an updated version of a specific type of software to a group of machines in our enviroment. We can accomplish this by creating a new host group in the hosts file, writing out all the IP addresses of the machines that need to be updated under that group and create a playbook to install the update to all machines in the group through the playbook. 
 
 The playbook implements the following tasks:
 - first step is to install docker.io to download the package containing the docker platform to our system. 
@@ -103,6 +102,6 @@ SSH into the control node and follow the steps below:
 
 - When using the various playbooks the hosts field in the playbook needs to be modified to specify the group of remote hosts to be modified by the commands written within the playbook. Another step to keep in mind is to update the hosts file to specify the group of machines in your environment to be affected by a playbook.   
 
-- Kibana can be accessed through your locak browser by navigating to the ELK servers public IP address through port 5601.
+- Kibana can be accessed through your local browser by navigating to the ELK servers public IP address through port 5601.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

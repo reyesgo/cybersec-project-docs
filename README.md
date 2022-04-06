@@ -105,3 +105,11 @@ SSH into the control node and follow the steps below:
 - Kibana can be accessed through your local browser by navigating to the ELK servers public IP address through port 5601.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+How to Download repository
+
+when it comes to downloading the repository you will need to access it through your browser by typing https://github.com/reyesgo/cybersec-project-docs. once you are at the root directory of the repository you will need to click on the green "code" button. make sure "https" is selected and click the icon at the end of the url to copy it. next open git bash and navigate to the location where you want to create a copy of the repository. type "git clone" and paste the URL you copied earlier. once you press enter your local clone will be created.
+
+command: git clone https://github.com/reyesgo/cybersec-project-docs
+
+

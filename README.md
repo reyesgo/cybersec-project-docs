@@ -111,6 +111,7 @@ SSH into the control node and follow the steps below:
 - Update the host file in /etc/ansible by creating a host group and include the IP address of the host that will function as the ELK server.
   
   - ![screenshot of elk-ip example](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-ip-address.png)
+  - [elk] = the host group
   - x.x.x.x = the IP address of your ELK server
 
 - Run the playbook. 

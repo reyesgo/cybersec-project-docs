@@ -6,10 +6,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-[DVWA Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/DVWA)
-[ELK Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/ELK)
-[Filebeat Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/Filebeat)
-[Metricbeat Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/Metricbeat)
+- [DVWA Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/DVWA)
+- [ELK Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/ELK)
+- [Filebeat Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/Filebeat)
+- [Metricbeat Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/Metricbeat)
 
 This document contains the following details:
 - Description of the Topology
@@ -26,14 +26,14 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network. 
 
-- Load balancers guard against a single server overloading by distributing the flow of traffic across all available servers. it monitors the health of its registered targets and routes traffic only to healthy targets. 
+- A load balancer guard against a single server overloading by distributing the flow of traffic across all available servers. it monitors the health of its registered targets and routes traffic only to healthy targets. 
   
-- the Advantage of a jumb box is that it provides another layer in the defense in depth approach. The concept of a jump box is a security hardened single point to our network. It acts as a bridge between two trusted systems in the network.  
+- A jumb box provides another layer in the defense in depth approach. The concept of a jump box is a security hardened single point to our network. It acts as a bridge between two trusted systems in the network.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system. we use the following beats to accomplish this task:
 
- -  Filebeat monitors the log files and forwards them to ELK server to be indexed.
- -  Metricbeat collects metrics from the operating system and from services running on the server to be analysed.
+ -  Filebeat monitors the log files and forwards any changes to the ELK server.
+ -  Metricbeat collects metrics and system resources usage from a host and sends to the ELK server.
 
 The configuration details of each machine may be found below.
 
@@ -49,10 +49,12 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 23.81.114.222 - personal laptop
+- 23.81.114.222
 
-Machines within the network can only be accessed by the container in the jump box.
-- The ansible container is the only machine that can access all other virtual machines in the network such as the 2 web servers and the ELK server via asymmetric encryption.
+Machines within the network can only be accessed by the ansible container in the jump box.
+
+- Ansible containter
+  - Private IP: 172.17.0.2 
 
 A summary of the access policies in place can be found in the table below.
 
@@ -68,11 +70,12 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it increases efficiency and allows us to quickly scale our environment through the use of playbooks. For example, if we want to install an updated version of a specific type of software to a group of machines in our enviroment. We can accomplish this by creating a new host group in the hosts file, writing out all the IP addresses of the machines that need to be updated under that group and create a playbook to install the update to all machines in the group through the playbook. 
 
 The playbook implements the following tasks:
-- first step is to install docker.io to download the package containing the docker platform to our system. 
-- next step we download python3-pip used for installing and managing python images/packages.
-- next we install the docker engine that will house all our containers. this is were we will install our ELK image.
-- next we will create a rule to allocate the required amount of virtual memory for the ELK stack to perform as intended.
-- lastly we download and install the elk image and configure it so that it is enabled on system boot.  
+- Install docker.io: downloads the package containing the docker platform to our system. 
+- Install python3-pip: installs a python packaging management system used to install and manage software images/packages.
+- Install docker module: installs the docker engine that will house all our containers. this is were we will install our ELK image.
+- Increase virtual memory/Use more memory: creates a rule to allocate the required amount of virtual memory for the ELK stack to perform as intended.
+- Download and launch a docker elk container: downloads, configures and installs the elk image.  
+- Enable service docker on boot: enables the docker engine on system boot.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -80,10 +83,12 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-| Name  | IP address |
-|-------|------------|
-| Web-1 | 10.0.0.4   |
-| Web-2 | 10.0.0.5   |
+
+| Name     | IP address |
+|----------|------------|
+| Jump Box | 10.0.0.4   |
+| Web-1    | 10.0.0.5   |
+| Web-2    | 10.0.0.6   |
 
 We have installed the following Beats on these machines:
 - Filebeat
@@ -91,16 +96,22 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 
-- Filebeat monitors and collects System changes such as system log events, sudo command events, SSH login attempts, and the creating of new users and groups and forwards them to the ELK server to be analysed via our Kibana web interface. 
+- Filebeat monitors and collects System changes such as system log events, sudo command events, SSH login attempts, and the creating of new users and groups and forwards them to the ELK server to be analysed via our Kibana web interface.
+ 
 - Metricbeat monitors and collects information of the overall health of our docker contained web servers such as system, host and container metrics that we can also analyse via the Kibana web interface.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the host file to /etc/ansible.
-- Update the host file to include the IP address of remote hosts.
-- Run the playbook, and navigate to the remote host machine to check that the installation worked as expected.
+
+- Copy the install-elk.yml to /etc/ansible by running the following command.
+  - curl https://raw.githubusercontent.com/reyesgo/cybersec-project-docs/main/Ansible/Playbooks/ELK/install-elk.yml > /etc/ansible/install-elk.yml
+
+- Update the host file in /etc/ansible by creating a host group and include the IP address of the host that will function as the ELK server.
+  - x.x.x.x = the IP address of your ELK server
+
+- Run the playbook, and navigate to the ELK server to check that the installation worked as expected.
 
 - All files with the .yml extension are our playbooks, they are all located in the Playbook folder in our repository. when copying these files over to a control machine they will need to be stored in the /etc/ansible folder.
 
@@ -109,11 +120,5 @@ SSH into the control node and follow the steps below:
 - Kibana can be accessed through your local browser by navigating to the ELK servers public IP address through port 5601.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-
-How to Download repository
-
-when it comes to downloading the repository you will need to access it through your browser by typing https://github.com/reyesgo/cybersec-project-docs. once you are at the root directory of the repository you will need to click on the green "code" button. make sure "https" is selected and click the icon at the end of the url to copy it. next open git bash and navigate to the location where you want to create a copy of the repository. type "git clone" and paste the URL you copied earlier. once you press enter your local clone will be created.
-
-command: git clone https://github.com/reyesgo/cybersec-project-docs
 
 

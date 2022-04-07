@@ -6,7 +6,10 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-[ELK Playbook file](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks)
+[DVWA Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/DVWA)
+[ELK Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/ELK)
+[Filebeat Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/Filebeat)
+[Metricbeat Playbook](https://github.com/reyesgo/cybersec-project-docs/tree/main/Ansible/Playbooks/Metricbeat)
 
 This document contains the following details:
 - Description of the Topology

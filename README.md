@@ -21,9 +21,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting access to the network. 
 
-- The use of a Load balancer is to prevent a server from overloading by distributing the flow of traffic across all available servers. Another benefit of a load balancer is that it can run SSL off-loading to repel a DDoS attack by forwarding all SSL based encryption to a dedicated server to decrypt incoming traffic and then forward the unencrypted traffic to the available web servers to relieve them from using its resources to decrypt the data.  
+- Load balancers guard against a single server overloading by distributing the flow of traffic across all available servers. it monitors the health of its registered targets and routes traffic only to healthy targets. 
+  
 - the Advantage of a jumb box is that it provides another layer in the defense in depth approach. The concept of a jump box is a security hardened single point to our network. It acts as a bridge between two trusted systems in the network.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system. we use the following beats to accomplish this task:

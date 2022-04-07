@@ -79,7 +79,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![screenshot of docker ps output](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-container.png)
+![screenshot of docker ps output](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-container-updated.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -109,16 +109,12 @@ SSH into the control node and follow the steps below:
   - curl https://raw.githubusercontent.com/reyesgo/cybersec-project-docs/main/Ansible/Playbooks/ELK/install-elk.yml > /etc/ansible/install-elk.yml
 
 - Update the host file in /etc/ansible by creating a host group and include the IP address of the host that will function as the ELK server.
+  
+  - ![screenshot of elk-ip example](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-ip-address.png)
   - x.x.x.x = the IP address of your ELK server
 
-- Run the playbook, and navigate to the ELK server to check that the installation worked as expected.
-
-- All files with the .yml extension are our playbooks, they are all located in the Playbook folder in our repository. when copying these files over to a control machine they will need to be stored in the /etc/ansible folder.
-
-- When using the various playbooks the hosts field in the playbook needs to be modified to specify the group of remote hosts to be modified by the commands written within the playbook. Another step to keep in mind is to update the hosts file to specify the group of machines in your environment to be affected by a playbook.   
-
-- Kibana can be accessed through your local browser by navigating to the ELK servers public IP address through port 5601.
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-
+- Run the playbook. 
+  - ansible-playbook /etc/ansible/install-elk.tml 
+ 
+- Navigate to http://[ELK-server-public-ip-address]:5601 to check that the installation worked as expected.
 

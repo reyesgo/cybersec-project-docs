@@ -49,7 +49,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 23.81.114.222
+- xx.xx.xx.222
 
 Machines within the network can only be accessed by the ansible container in the jump box.
 
@@ -60,10 +60,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 23.81.114.222:22     |
-| Web-1    | Yes                 | 23.81.114.222:80     |
-| Web-2    | Yes                 | 23.81.114.222:80     |
-| ELK      | Yes                 | 23.81.114.222:5601   |
+| Jump Box | Yes                 | xx.xx.xx.222:22      |
+| Web-1    | Yes                 | xx.xx.xx.222:80      |
+| Web-2    | Yes                 | xx.xx.xx.222:80      |
+| ELK      | Yes                 | xx.xx.xx.222:5601    |
 
 ### Elk Configuration
 

@@ -11,7 +11,7 @@ Setup a cloud monitoring system by configuring an ELK Stack server in a Microsof
 - Created Ansible playbook to install and configure ELK server.
 - Installed and launched Docker containers to virtual machines.
 - Created Ansible playbook to install and configure Filebeat and Metricbeat.
-- Created a diagram of the network and README file.
+- Created a diagram of the network and documented process.
 
 ### Skills Used
 

@@ -43,11 +43,36 @@ Played the role of both penetration tester and SOC (Security operations center) 
 
 - 
 
-## Project 3 - Red vs Blue Part 2
+## Project 3 - Red vs Blue Part 2/Network Forensics
 
 ### Description
 
+
+
+The project was divided into 2 activities: 
+
+Activity 1: Red vs Blue part 2
+
+
+
+Activity 2: Network Forensics
+
 ### Objectives
+
+Red vs Blue team Objectives
+
+- Configured alerts proposed in Kibana from Project 2.
+- Enumerated, exploited, and escalated prvileges on a vulnerable wordpress virtual machine.
+- Captured flags on the victim machine.
+- Created and submitted offensive red team analysis report.
+- Created and submitted defensive blue team analysis report.
+
+Network Forensics Objectives
+
+- Captured and analyzed network traffic using Wireshark.
+- Inspected network traffic to find evidence of corporate network misuse. 
+- Inspected network traffic to find evidence of a malware attack.
+- Created and submitted network forensic analysis report.
 
 ### Skills Used
 

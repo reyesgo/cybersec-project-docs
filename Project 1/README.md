@@ -106,11 +106,11 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 
 - Copy the install-elk.yml to /etc/ansible by running the following command.
-  - curl https://raw.githubusercontent.com/reyesgo/cybersec-project-docs/main/Ansible/Playbooks/ELK/install-elk.yml > /etc/ansible/install-elk.yml
+  - curl https://raw.githubusercontent.com/reyesgo/cybersec-project-docs/main/Project%201/Ansible/Playbooks/ELK/install-elk.yml > /etc/ansible/install-elk.yml
 
 - Update the host file in /etc/ansible by creating a host group and include the IP address of the host that will function as the ELK server.
   
-  - ![screenshot of elk-ip example](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-ip-address.png)
+  - ![screenshot of elk-ip example](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-ip-address.png)
   - [elk] = the host group
   - x.x.x.x = the IP address of your ELK server
 
@@ -118,5 +118,5 @@ SSH into the control node and follow the steps below:
   - ansible-playbook /etc/ansible/install-elk.tml 
  
 - Navigate to http://[ELK-server-public-ip-address]:5601 to check that the installation worked as expected.
-  - ![screenshot of kibana-homepage](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-ip-address.png) 
+  - ![screenshot of kibana-homepage](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/kibana-homepage-updated.png) 
 

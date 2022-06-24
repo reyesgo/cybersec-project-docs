@@ -79,7 +79,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![screenshot of docker ps output](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/elk-container-updated.png)
+![screenshot of docker ps output](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-container-updated.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -118,5 +118,5 @@ SSH into the control node and follow the steps below:
   - ansible-playbook /etc/ansible/install-elk.tml 
  
 - Navigate to http://[ELK-server-public-ip-address]:5601 to check that the installation worked as expected.
-  - ![screenshot of kibana-homepage](https://github.com/reyesgo/cybersec-project-docs/blob/main/Images/kibana-homepage-updated.png) 
+  - ![screenshot of kibana-homepage](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-ip-address.png) 
 

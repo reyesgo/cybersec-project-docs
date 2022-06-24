@@ -32,8 +32,8 @@ Played the role of both penetration tester and SOC (Security operations center) 
 
 ### Objectives
 
-- Enumerated, exploited and escalated privileges on a vulnerable virtual machine.
-- Recorded penetration testing action using ELK server.
+- Enumerated, exploited, and escalated privileges on a vulnerable virtual machine.
+- Recorded penetration testing actions using an ELK server.
 - Analyzed logs to determine attack techniques.
 - Created a diagram of the network.
 - Summarized Red and Blue team findings in an assessment report.

@@ -1,4 +1,4 @@
-## Automated ELK Stack Deployment
+# Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
@@ -20,7 +20,7 @@ This document contains the following details:
 - How to Use the Ansible Build
 
 
-### Description of the Topology
+## Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -44,7 +44,7 @@ The configuration details of each machine may be found below.
 | Web-2    | DVWA     | 10.0.0.6   | Linux            |
 | ELK      | ELK      | 10.1.0.4   | Linux            |
 
-### Access Policies
+## Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -65,7 +65,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-2    | Yes                 | xx.xx.xx.222:80      |
 | ELK      | Yes                 | xx.xx.xx.222:5601    |
 
-### Elk Configuration
+## ELK Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it increases efficiency and allows us to quickly scale our environment through the use of playbooks. For example, if we want to install an updated version of a specific type of software to a group of machines in our enviroment. We can accomplish this by creating a new host group in the hosts file, writing out all the IP addresses of the machines that need to be updated under that group and create a playbook to install the update to all machines in the group through the playbook. 
 
@@ -81,7 +81,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![screenshot of docker ps output](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-container-updated.png)
 
-### Target Machines & Beats
+## Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
 | Name     | IP address |
@@ -100,7 +100,8 @@ These Beats allow us to collect the following information from each machine:
  
 - Metricbeat monitors and collects information of the overall health of our docker contained web servers such as system, host and container metrics that we can also analyse via the Kibana web interface.
 
-### Using the Playbook
+## Using the Playbook
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:

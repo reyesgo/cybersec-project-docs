@@ -81,25 +81,42 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
 
+Due to open ports being visible during a Nmap scan, I was able to determine the victims IP address as well as the port and service version being used to host a web server.
+
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+I was able to find the IP address of the server and determine that the server was using port 80 to host the website.
 
 #### Broken Authentication
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
 
+The tools I used to exploit the web server’s broken authentication vulnerability was by using hydra to perform a brute force attack. The web servers lists the name of the person in charge of system administration. I used their name as the username and used a wordlist to brute force the password with hydra.
+
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+The exploited granted access to a restricted secret folder that contained a file describing the process to gain access to the webdav directory. 
 
 #### Sensitive Data Explosure
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
 
+After gaining access to the file in the restricted secret folder, I found a hash value.
+I used john the ripper to crack the password.
+
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+The exploited granted access to the webdav folder. 
 
 #### Local File Inclusion
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
 
+After gaining access to the webdav server I was able to craft a PHP reverse shell payload using msfvenom and uploaded the payload to the server. I also setup a listener using the metasploit framework in order to catch the reverse shell after being executed.
+
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+The exploit granted access to the web server operating system. 
 
 ## Blue Team: Log Analysis and Attack Characterization
 

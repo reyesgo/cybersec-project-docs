@@ -33,6 +33,7 @@ Gateway: 192.168.1.1
 ## Red Team: Security Assesment
 
 ### Recon: Describing the Target
+
 Nmap Identified the following hosts on the network:
 
 |Hostname       |IP Address     |Role of Network|
@@ -42,34 +43,66 @@ Nmap Identified the following hosts on the network:
 |ELK            | 192.168.1.100 | Monitoring Machine|
 |Captstone      | 192.168.1.105 | Victim Machine|
 
-## Vulnerability Assesment
+---
+
+### Vulnerability Assesment
 
 The assesment uncovered the following critical vulnerabilities in the target:
 
-### Port Scanning
+#### Port Scanning
 
-Description: Method to determine what ports are open.
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description: Method to determine what ports are open.
 
-Impact:
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Impact: Attackers can discover vulnerabilities associated with each visible open port with a port scan.
 
-### Broken Authentication
+#### Broken Authentication
 
-Description: Broken Authentication attacks are used to exploit user accounts. 
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description: Broken Authentication attacks are used to exploit user accounts. 
 
-Impact:
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Impact: Attackers that are able to obtain valid credentials are able to have access to password protected directories and files. 
 
-### Sensitive Data Exposure
+#### Sensitive Data Exposure
 
-Description: Sensitive Data is any information that is meant to be protected from unauthorized access. 
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description: Sensitive Data is any information that is meant to be protected from unauthorized access. 
 
-Impact:
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Impact: If Attackers are able to obtain exposed credentials they will be able to elevate their access to other resources in the domain/server.
 
-### Local File Inclusion
+#### Local File Inclusion
 
-Description: A Local File Inclusion are attacks that happen when an application includes a file as user input without properly validating it.
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description: A Local File Inclusion are attacks that happen when an application includes a file as user input without properly validating it.
 
-Impact:
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Impact: Attackers are able to trick the web application into running malicious files on the web server.
+
+---
+
+### Exploitation
+
+#### Port scanning
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+#### Broken Authentication
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+#### Sensitive Data Explosure
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
+
+#### Local File Inclusion
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tools & Processes
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Achievements
 
 ## Blue Team: Log Analysis and Attack Characterization
+
+
 
 ## Hardening: Proposed Alarms and Mitigation Strategies

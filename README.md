@@ -27,7 +27,7 @@ Setup a cloud monitoring system by configuring an ELK Stack Server in a Microsof
   - Packetbeat
   - Metricbeat
 
-(link to project 1)
+[Project 1 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/README.md)
 
 ## Project 2 - Red vs Blue Part 1
 
@@ -62,7 +62,7 @@ Played the role of both penetration tester and SOC (Security operations center) 
   - Packetbeat
   - Metricbeat
 
-(link to project 2)
+[Project 2 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/README.md)
 
 ## Project 3 - Red vs Blue Part 2/Network Forensics
 
@@ -104,4 +104,4 @@ Network Forensics Objectives
   - Packetbeat
   - Metricbeat
 
-(link to project 3)
+[Project 3 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/README.md)

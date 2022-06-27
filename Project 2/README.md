@@ -7,6 +7,7 @@
 3. [Blue Team: Log Analysis and Mitigation Strategies](#blue-team-log-analysis-and-mitigation-strategies)
 4. [Hardening: Proposed Alarms and Mitigation Strategies](#hardening-proposed-alarms-and-mitigation-strategies)
 
+
 ## **Network Topology**
 
 ### **Network**
@@ -26,7 +27,6 @@ Gateway: 192.168.1.1
 |192.168.1.100|Ubuntu (Linux)|ELK     |
 |192.168.1.105|Ubuntu (Linux)|Capstone|
 
-
 ![Network Topology](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Diagrams/Project%202-Updated.drawio.png) 
 
 
@@ -42,6 +42,8 @@ Nmap Identified the following hosts on the network:
 |Kali           | 192.168.1.90  | Attack Machine|
 |ELK            | 192.168.1.100 | Monitoring Machine|
 |Captstone      | 192.168.1.105 | Victim Machine|
+
+
 
 ## **Vulnerability Assesment**
 
@@ -70,6 +72,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
  &nbsp;&nbsp;&nbsp;Description: A Local File Inclusion are attacks that happen when an application includes a file as user input without properly validating it.
 
  &nbsp;&nbsp;&nbsp;Impact: Attackers are able to trick the web application into running malicious files on the web server.
+
 
 ## **Exploitation**
 
@@ -122,30 +125,66 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
 ![Local File Inclusion](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/Webdav.png)
 
+
 ## **Blue Team: Log Analysis and Mitigation Strategies**
+
 
 ## **Log Analysis**
 
 ### Identifying the Port Scan
 
-#### &nbsp;&nbsp;At What time did the port scan occur?
+#### &nbsp;&nbsp;&nbsp;What time did the port scan occur?
 
-&nbsp;&nbsp;&nbsp;&nbsp;The port scan occurred at 1:53pm based on the logs.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The port scan occurred at 1:53pm based on the logs.
 
-#### &nbsp;&nbsp;How many packets were sent, and from which IP address?
+#### &nbsp;&nbsp;&nbsp;How many packets were sent, and from which IP address?
 
-&nbsp;&nbsp;&nbsp;&nbsp;1,100 packets were sent.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1,100 packets were sent.
 
-#### &nbsp;&nbsp;What indicates that this was a port scan?
+#### &nbsp;&nbsp;&nbsp;What indicates that this was a port scan?
 
-&nbsp;&nbsp;&nbsp;&nbsp;The destination ports for each packet were all different.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The destination ports for each packet were all different.
+
+![Port scan](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/Nmap%20-T2%20-F%20-sV%20scan.png)
 
 ### Finding the Request for the Hidden Directory
 
+#### &nbsp;&nbsp;&nbsp;What time did the request occur? How many request were made?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The request occurred at 2:34pm.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 request was made.
+
+#### &nbsp;&nbsp;&nbsp;Which files were requested? What did they contain?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The file requested was "secret_folder".
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It contains the "connect_to_corp_server" file.
+
+![Hidden Directory](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/hidden%20directory%20request.png)
+
 ### Uncovering the Brute Force Attack
+
+#### &nbsp;&nbsp;&nbsp;How many requests were made in the attack?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There were 15,606 requests made during the brute force attack.
+
+#### &nbsp;&nbsp;&nbsp;How many requests had been made before the attacker discovered the password?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on the logs there were very few requests made before the attack.
+
+![Brute Force](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/brute%20force%20attack.png)
 
 ### Finding the WebDAV Connection
 
-## **Mitigation Strategies**
+#### &nbsp;&nbsp;&nbsp;How many requests were made to this directory?
 
-## **Hardening: Proposed Alarms and Mitigation Strategies**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22 requests were made to the WebDAV directory.
+
+#### &nbsp;&nbsp;&nbsp;Which files were requested?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password.dav and payload.php were requested.
+
+
+
+## **Proposed Alarms and Mitigation Strategies**
+
+

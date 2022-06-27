@@ -158,11 +158,13 @@ The assesment uncovered the following critical vulnerabilities in the target:
 #### &nbsp;&nbsp;&nbsp;What time did the request occur? How many request were made?
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The request occurred at 2:34pm.
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 request was made.
 
 #### &nbsp;&nbsp;&nbsp;Which files were requested? What did they contain?
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The file requested was "secret_folder".
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It contains the "connect_to_corp_server" file.
 
 ![Hidden Directory](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/hidden%20directory%20request.png)

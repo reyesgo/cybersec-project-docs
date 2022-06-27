@@ -1,5 +1,7 @@
 ## Project 1 - ELK STACK
 
+[Project 1 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/README.md)
+
 ### Description
 
 Setup a cloud monitoring system by configuring an ELK Stack Server in a Microsoft Azure environment. The server was used to monitor a vulnerable virtual machine using DVWA for any changes to the system. Setup Filebeat and Metricbeat to monitor and collect data from the vulnerable machine on the network. Created playbooks for the DVWA (D*mn vulnerable web application) and ELK stack and its Beats suite. 
@@ -27,9 +29,9 @@ Setup a cloud monitoring system by configuring an ELK Stack Server in a Microsof
   - Packetbeat
   - Metricbeat
 
-[Project 1 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/README.md)
-
 ## Project 2 - Red vs Blue Part 1
+
+[Project 2 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/README.md)
 
 ### Description
 
@@ -62,9 +64,9 @@ Played the role of both penetration tester and SOC (Security operations center) 
   - Packetbeat
   - Metricbeat
 
-[Project 2 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/README.md)
-
 ## Project 3 - Red vs Blue Part 2/Network Forensics
+
+[Project 3 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/README.md)
 
 ### Description
 
@@ -103,5 +105,3 @@ Network Forensics Objectives
   - Filebeat
   - Packetbeat
   - Metricbeat
-
-[Project 3 - README.md](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/README.md)

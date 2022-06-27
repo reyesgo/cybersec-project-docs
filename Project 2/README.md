@@ -1,13 +1,13 @@
-# **Red vs Blue Assesment, Analysis, and Hardening of a Vulnerable System**
+# **Red vs Blue Assessment, Analysis, and Hardening of a Vulnerable System**
 
 ## **Table of Contents**
 
 1. [Network Topology](#network-topology)
    - [Network](#network)
    - [Machines](#machines)
-2. [Red Team: Security Assesment](#red-team-security-assesment)
+2. [Red Team: Security Assessment](#red-team-security-assessment)
    - [Recon: Describing the Target](#recon-describing-the-target)
-   - [Vulnerability Assesment](#vulnerability-assesment)
+   - [Vulnerability Assessment](#vulnerability-assessment)
    - [Exploitation](#exploitation)
 3. [Blue Team: Log Analysis and Mitigation Strategies](#blue-team-log-analysis-and-mitigation-strategies)
    - [Log Analysis](#log-analysis)
@@ -36,7 +36,7 @@ Gateway: 192.168.1.1
 ![Network Topology](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Diagrams/Project%202-Updated.drawio.png) 
 
 
-## **Red Team: Security Assesment**
+## **Red Team: Security Assessment**
 
 ## **Recon: Describing the Target**
 
@@ -47,13 +47,13 @@ Nmap Identified the following hosts on the network:
 |Hyper-V        | 192.168.1.1   | Hypervisor    |
 |Kali           | 192.168.1.90  | Attack Machine|
 |ELK            | 192.168.1.100 | Monitoring Machine|
-|Captstone      | 192.168.1.105 | Victim Machine|
+|Capstone       | 192.168.1.105 | Victim Machine|
 
 
 
-## **Vulnerability Assesment**
+## **Vulnerability Assessment**
 
-The assesment uncovered the following critical vulnerabilities in the target:
+The assessment uncovered the following critical vulnerabilities in the target:
 
 ### Port Scanning
 
@@ -65,19 +65,19 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
 - Description: Broken Authentication attacks are used to exploit user accounts. 
 
-- Impact: Attackers that are able to obtain valid credentials are able to have access to password protected directories and files. 
+- Impact: Attackers that can obtain valid credentials can have access to password-protected directories and files. 
 
 ### Sensitive Data Exposure
 
 - Description: Sensitive Data is any information that is meant to be protected from unauthorized access. 
 
-- Impact: If Attackers are able to obtain exposed credentials they will be able to elevate their access to other resources in the domain/server.
+- Impact: If Attackers can obtain exposed credentials they will be able to elevate their access to other resources in the domain/server.
 
 ### Local File Inclusion
 
-- Description: A Local File Inclusion are attacks that happen when an application includes a file as user input without properly validating it.
+- Description: Local File Inclusion is an attack that happens when an application includes a file as user input without properly validating it.
 
-- Impact: Attackers are able to trick the web application into running malicious files on the web server.
+- Impact: Attackers can trick the web application into running malicious files on the web server.
 
 
 ## **Exploitation**
@@ -86,7 +86,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - ### Tools & Processes
 
-      - Due to open ports being visible during a Nmap scan, I was able to determine the victims IP address as well as the port and service version being used to host a web server.
+      - Due to open ports being visible during a Nmap scan, I was able to determine the victim's IP address as well as the port and service version being used to host a web server.
 
    - ### Achievements
 
@@ -98,16 +98,16 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - ### Tools & Processes
 
-      - The tools I used to exploit the web server’s broken authentication vulnerability was by using hydra to perform a brute force attack. The web servers lists the name of the person in charge of system administration. I used their name as the username and used a wordlist to brute force the password with hydra.
+      - The tool I used to exploit the web server’s broken authentication vulnerability was by using hydra to perform a brute force attack. The web servers list the name of the person in charge of system administration. I used their name as the username and used a wordlist to brute force the password with hydra.
 
    - ### Achievements
 
-      - The exploited granted access to a restricted secret folder that contained a file describing the process to gain access to the webdav directory. 
+      - The exploited granted access to a restricted secret folder that contained a file describing the process to gain access to the WebDAV directory. 
 
 ![Hydra command](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/hydra%20command.png)
 ![Hydra result](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/hydra%20-%20result.png)
 
-- ### Sensitive Data Explosure
+- ### Sensitive Data Exposure
 
    - ### Tools & Processes
 
@@ -115,7 +115,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - ### Achievements
 
-      - The exploited granted access to the webdav folder. 
+      - The exploited granted access to the WebDAV folder. 
 
 ![Data Exposure](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%202/Images/secret%20folder%20file.png)
 
@@ -123,7 +123,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - ### Tools & Processes
 
-      - After gaining access to the webdav server I was able to craft a PHP reverse shell payload using msfvenom and uploaded the payload to the server. I also setup a listener using the metasploit framework in order to catch the reverse shell after being executed.
+      - After gaining access to the WebDAV server I was able to craft a PHP reverse shell payload using msfvenom and uploaded the payload to the server. I also set up a listener using the Metasploit framework to catch the reverse shell after being executed.
 
    - ### Achievements
 
@@ -141,7 +141,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What time did the port scan occur?
 
-     - The port scan occurred at 1:53pm based on the logs.
+     - The port scan occurred at 1:53 pm based on the logs.
 
    - #### How many packets were sent, and from which IP address?
 
@@ -155,9 +155,9 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
 - ### Finding the Request for the Hidden Directory
 
-   - #### What time did the request occur? How many request were made?
+   - #### What time did the request occur? How many requests were made?
 
-      - The request occurred at 2:34pm.
+      - The request occurred at 2:34 pm.
 
       - 1 request was made.
 
@@ -171,7 +171,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
 - ### Uncovering the Brute Force Attack
 
-    - #### How many requests were made in the attack?
+    - #### How many requests were made during the attack?
 
       - There were 15,606 requests made during the brute force attack.
 
@@ -200,7 +200,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
     - #### What kind of alarm can be set to detect future port scans?
 
-      - We can setup-up an email alert.
+      - We can set up an email alert.
 
     - #### What threshold would you set to activate this alarm?
 
@@ -212,7 +212,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
       - Configure the firewall to enable packet filtering to mitigate port scanning. Deny all ICMP requests from external hosts.
 
-      - Setup a SIEM platform for monitoring port scan activity in real-time and setup response measures such as alerts for rapid response inf needed
+      - Setup a SIEM platform for monitoring port scan activity in real-time and set up response measures such as alerts for rapid response if needed.
 
  - ### Finding the Request for the Hidden Directory
    
@@ -220,7 +220,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What kind of alarm can be set to detect future port scans?
 
-      - Setup an email alert.
+      - Set up an email alert.
 
    - #### What threshold would you set to activate this alarm?
 
@@ -230,7 +230,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What configurations can be set on the host to mitigate port scans?
 
-      - Implement error redirection, such as to deny any feedback to attackers by displaying a HTTP response code.
+      - Implement error redirection, such as denying any feedback to attackers by displaying an HTTP response code.
 
       - Adjust password policy requirements for users that have access to hidden directories.
 
@@ -242,7 +242,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What kind of alarm can be set to detect future port scans?
 
-      - Setup an email alert.
+      - Set up an email alert.
 
    - #### What threshold would you set to activate this alarm?
 
@@ -252,11 +252,11 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What configurations can be set on the host to mitigate port scans?
 
-      - Limit login attempts by locking the user account for a period of time after 5 consecutive failed attempts.
+      - Limit login attempts by locking the user account for some time after 5 consecutive failed attempts.
 
       - Use a secure platform session manager to randomly generate session identifiers.
 
-      - Setup MFA for all users so in the event a threat actor does acquire valid credentials they are unable to aunthenticate through additional factors required by MFA.
+      - Setup MFA for all users so in the event a threat actor does acquire valid credentials they are unable to authenticate through additional factors required by MFA.
 
 - ### Detecting the WebDAV Connection
 
@@ -264,17 +264,17 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What kind of alarm can be set to detect future port scans?
 
-      - Setup an email alert for login attempts and login location.
+      - Set up an email alert for login attempts and log-in location.
 
    - #### What threshold would you set to activate this alarm?
 
-      - The alert for failed attempts should trigger after 5 failed attempts. The alert for the login location should trigger every time an uncommon location is detected on login attempt.
+      - The alert for failed attempts should trigger after 5 failed attempts. The alert for the login location should trigger every time an uncommon location is detected on log-in attempt.
 
    - ### System Hardening
 
    - #### What configurations can be set on the host to mitigate port scans?
 
-      - Limit login attempts by locking the user account for a period of time after 5 consecutive failed attempts.
+      - Limit login attempts by locking the user account for some time after 5 consecutive failed attempts.
 
       - Only allow terminals that hold a recognized SSL certificate to connect to the WebDAV. 
 
@@ -286,7 +286,7 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
    - #### What kind of alarm can be set to detect future port scans?
 
-      - Setup an email alert.
+      - Set up an email alert.
 
    - #### What threshold would you set to activate this alarm?
 
@@ -300,4 +300,4 @@ The assesment uncovered the following critical vulnerabilities in the target:
 
       - Setup an anti-malware engine such as McAfee Gateway Anti-Malware engine to scan all uploaded files for malware.
 
-      - Store uploaded files outside of the websites public directory to prevent attackers from executing any uploaded files.
+      - Store uploaded files outside of the website's public directory to prevent attackers from executing any uploaded files.

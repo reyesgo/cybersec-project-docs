@@ -192,7 +192,112 @@ The assesment uncovered the following critical vulnerabilities in the target:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password.dav and payload.php were requested.
 
 
-
 ## **Proposed Alarms and Mitigation Strategies**
 
+### Blocking the Port Scan
 
+#### Alarm
+
+#### &nbsp;&nbsp;&nbsp;What kind of alarm can be set to detect future port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can setup-up an email alert.
+
+#### &nbsp;&nbsp;&nbsp;What threshold would you set to activate this alarm?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The threshold for the alert should be for 10 or more incoming packets that are requesting information about different ports from a single source in under a minute.
+
+#### System Hardening
+
+#### &nbsp;&nbsp;&nbsp;What configurations can be set on the host to mitigate port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure the firewall to enable packet filtering to mitigate port scanning. Deny all ICMP requests from external hosts.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup a SIEM platform for monitoring port scan activity in real-time and setup response measures such as alerts for rapid response inf needed
+
+### Finding the Request for the Hidden Directory
+
+#### Alarm
+
+#### &nbsp;&nbsp;&nbsp;What kind of alarm can be set to detect future port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup an email alert.
+
+#### &nbsp;&nbsp;&nbsp;What threshold would you set to activate this alarm?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The threshold of the alert should be set to 3 failed attempts from a single internal IP address. External IP address failed attempts should trigger on each attempt.
+
+#### System Hardening
+
+#### &nbsp;&nbsp;&nbsp;What configurations can be set on the host to mitigate port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implement error redirection, such as to deny any feedback to attackers by displaying a HTTP response code.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adjust password policy requirements for users that have access to hidden directories.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Encrypt contents within hidden directories.
+
+### Preventing Brute Force Attacks
+
+#### Alarm
+
+#### &nbsp;&nbsp;&nbsp;What kind of alarm can be set to detect future port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup an email alert.
+
+#### &nbsp;&nbsp;&nbsp;What threshold would you set to activate this alarm?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The alert should trigger after 5 consecutive failed attempts.
+
+#### System Hardening
+
+#### &nbsp;&nbsp;&nbsp;What configurations can be set on the host to mitigate port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limit login attempts by locking the user account for a period of time after 5 consecutive failed attempts.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use a secure platform session manager to randomly generate session identifiers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup MFA for all users so in the event a threat actor does acquire valid credentials they are unable to aunthenticate through additional factors required by MFA.
+
+### Detecting the WebDAV Connection
+
+#### Alarm
+
+#### &nbsp;&nbsp;&nbsp;What kind of alarm can be set to detect future port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup an email alert for login attempts and login location.
+
+#### &nbsp;&nbsp;&nbsp;What threshold would you set to activate this alarm?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The alert for failed attempts should trigger after 5 failed attempts. The alert for the login location should trigger every time an uncommon location is detected on login attempt.
+
+#### System Hardening
+
+#### &nbsp;&nbsp;&nbsp;What configurations can be set on the host to mitigate port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limit login attempts by locking the user account for a period of time after 5 consecutive failed attempts.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Only allow terminals that hold a recognized SSL certificate to connect to the WebDAV. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup MFA for all users so in the event a threat actor does acquire valid credentials they are unable to authenticate through additional factors required by MFA.
+
+### Identifying Reverse Shell Uploads
+
+#### Alarm
+
+#### &nbsp;&nbsp;&nbsp;What kind of alarm can be set to detect future port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup an email alert.
+
+#### &nbsp;&nbsp;&nbsp;What threshold would you set to activate this alarm?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The alert should trigger every time anyone attempts to upload an executable file.
+
+#### System Hardening
+
+#### &nbsp;&nbsp;&nbsp;What configurations can be set on the host to mitigate port scans?
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limit allowed file types to avoid executable files from being uploaded.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Setup an anti-malware engine such as McAfee Gateway Anti-Malware engine to scan all uploaded files for malware.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Store uploaded files outside of the websites public directory to prevent attackers from executing any uploaded files.

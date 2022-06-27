@@ -1,8 +1,15 @@
 # Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below.
+## Table of Contents
 
-![ELK network Diagram](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Diagrams/ELK%20Network%20Diagram%202.0.jpg)
+1. [Playbooks](#playbooks)
+2. [Description of the Topology](#description-of-the-topology)
+3. [Access Policies](#access-policies)
+4. [ELK Configuration](#elk-configuration)
+5. [Target Machines & Beats](#target-machines--beats)
+6. [Using the Playbook](#using-the-playbook)
+
+## Playbooks
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as the following:
 
@@ -11,16 +18,11 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - [Filebeat Playbook](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Ansible/Playbooks/Filebeat/filebeat-playbook.yml)
 - [Metricbeat Playbook](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Ansible/Playbooks/Metricbeat/metricbeat-playbook.yml)
 
-This document contains the following details:
-- Description of the Topology
-- Access Policies
-- ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
-
-
 ## Description of the Topology
+
+The files in this repository were used to configure the network depicted below.
+
+![ELK network Diagram](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Diagrams/ELK%20Network%20Diagram%202.0.jpg)
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -111,13 +113,16 @@ SSH into the control node and follow the steps below:
 
 - Update the host file in /etc/ansible by creating a host group and include the IP address of the host that will function as the ELK server.
   
-  - ![screenshot of elk-ip example](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-ip-address.png)
+![screenshot of elk-ip example](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/elk-ip-address.png)
+  
   - [elk] = the host group
   - x.x.x.x = the IP address of your ELK server
 
 - Run the playbook. 
+
   - ansible-playbook /etc/ansible/install-elk.tml 
  
 - Navigate to http://[ELK-server-public-ip-address]:5601 to check that the installation worked as expected.
-  - ![screenshot of kibana-homepage](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/kibana-homepage-updated.png) 
+
+![screenshot of kibana-homepage](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%201/Images/kibana-homepage-updated.png) 
 

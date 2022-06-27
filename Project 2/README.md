@@ -3,10 +3,16 @@
 ## **Table of Contents**
 
 1. [Network Topology](#network-topology)
+   - [Network](#network)
+   - [Machines](#machines)
 2. [Red Team: Security Assesment](#red-team-security-assesment)
+   - [Recon: Describing the Target](#recon-describing-the-target)
+   - [Vulnerability Assesment](#vulnerability-assesment)
+   - [Exploitation](#exploitation)
 3. [Blue Team: Log Analysis and Mitigation Strategies](#blue-team-log-analysis-and-mitigation-strategies)
-4. [Hardening: Proposed Alarms and Mitigation Strategies](#hardening-proposed-alarms-and-mitigation-strategies)
-
+   - [Log Analysis](#log-analysis)
+   - [Proposed Alarms and Mitigation Strategies](#proposed-alarms-and-mitigation-strategies)
+ 
 
 ## **Network Topology**
 
@@ -32,7 +38,7 @@ Gateway: 192.168.1.1
 
 ## **Red Team: Security Assesment**
 
-### **Recon: Describing the Target**
+## **Recon: Describing the Target**
 
 Nmap Identified the following hosts on the network:
 

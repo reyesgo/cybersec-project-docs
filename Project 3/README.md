@@ -227,3 +227,38 @@ You must inspect your traffic capture to answer the following questions:
 ![Q4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/virustotal.png)
 
 ## Vulnerable Windows Machines
+
+The Security team received reports of an infected Windows host on the network. They know the following:
+
+- Machines in the network live in the range 172.16.4.0/24.
+- The domain mind-hammer.net is associated with the infected computer.
+- The DC for this network lives at 172.16.4.4 and is named Mind-Hammer-DC.
+- The network has standard gateway and broadcast addresses.
+
+Inspect your traffic to answer the following questions:
+
+1. Find the following information about the infected Windows machine:
+- Host name: **ROTTERDAM-PC**
+- IP address: **172.16.4.205**
+- MAC address: **00:59:07:b0:63:a4**
+
+![Q1 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/infected%20machine.png)
+
+2. What is the username of the Windows user whose computer is infected?
+
+- matthijs.devries
+
+![Q2 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/infected%20user.png)
+
+3. What are the IP addresses used in the actual infection traffic?
+
+- Both 166.62.111.64 and 185.243.115.84 were used to infect the host machine.
+
+![Q3 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/infected%20traffic.png)
+
+4. Retrieve the desktop background of the Windows host.
+
+- ip.addr == 185.243.115.84 && http.request.method == POST
+
+[Q4 command](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/desktop%20image.png)
+[Q4 image]()

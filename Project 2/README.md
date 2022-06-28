@@ -4,7 +4,7 @@
 
 1. [Network Topology](#network-topology)
    - [Network](#network)
-   - [Machines](#machines)
+   - [Hosts](#hosts)
 2. [Red Team: Security Assessment](#red-team-security-assessment)
    - [Recon: Describing the Target](#recon-describing-the-target)
    - [Vulnerability Assessment](#vulnerability-assessment)
@@ -24,7 +24,7 @@ Netmask: 255.255.255.0
 
 Gateway: 192.168.1.1
 
-### Machines
+### Hosts
 
 |IPv4         |OS            |Hostname|
 |-------------|--------------|--------|

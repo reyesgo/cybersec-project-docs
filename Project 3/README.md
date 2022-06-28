@@ -204,25 +204,25 @@ You must inspect your traffic capture to answer the following questions:
 
 1. What is the domain name of the users custom site?
 
-Answer: Frank-n-Ted-DC.frank-n-ted.com
+- Answer: Frank-n-Ted-DC.frank-n-ted.com
 
 ![Q1 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/Domain%20Controller.png)
 
 2. What is the IP address of the Domain Controller (DC) of the AD network?
 
-Answer: 10.6.12.12
+- Answer: 10.6.12.12
 
 ![Q2 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/dc_ip.png)
 
 3. What is the name of the malware downloaded to the 10.6.12.203 machine? Once you have found the file, export it to your Kali machine's desktop.
 
-Answer: june11.dll
+- Answer: june11.dll
 
 ![Q3 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/malicious%20file.png)
 
 4. Upload the file to VirusTotal.com. What kind of malware is this classified as?
 
-Answer: the site classifed the malware as a Trojan.
+- Answer: the site classifed the malware as a Trojan.
 
 ![Q4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/virustotal.png)
 

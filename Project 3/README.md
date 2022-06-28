@@ -262,4 +262,4 @@ Inspect your traffic to answer the following questions:
 
 ![Q4 command](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/desktop%20image.png)
 
-[Q4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/empty.gif)
+![Q4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/empty.gif)

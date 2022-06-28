@@ -194,15 +194,15 @@ The Red Team was able to penetrate Target 1 and retrive the following confidenti
 
 ## Time Thieves
 
-At least two users on the network have been wasting time on YouTube. Usually, IT wouldn't pay much mind to this behavior, but it seems these people have created their own web server on the corporate network. So far, Security knows the following about these time thieves:
+At least two users on the network have been wasting time on YouTube. Usually, IT wouldn't pay much mind to this behavior, but it seems these people have created their web server on the corporate network. So far, Security knows the following about these time thieves:
 
-- They have setup an Active Directory network.
+- They have set up an Active Directory network.
 - They are constantly watching videos on YouTube.
 - Their IP addresses are somewhere in the range 10.6.12.0/24.
 
 You must inspect your traffic capture to answer the following questions:
 
-1. What is the domain name of the users custom site?
+1. What is the domain name of the user's custom site?
 
 - Answer: Frank-n-Ted-DC.frank-n-ted.com
 
@@ -222,7 +222,7 @@ You must inspect your traffic capture to answer the following questions:
 
 4. Upload the file to VirusTotal.com. What kind of malware is this classified as?
 
-- Answer: the site classifed the malware as a Trojan.
+- Answer: the site classified the malware as a Trojan.
 
 ![Q4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/virustotal.png)
 

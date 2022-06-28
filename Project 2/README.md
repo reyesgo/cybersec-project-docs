@@ -3,15 +3,15 @@
 ## **Table of Contents**
 
 1. [Network Topology](#network-topology)
-   - [Network](#network)
-   - [Hosts](#hosts)
+   1. [Network](#network)
+   2. [Hosts](#hosts)
 2. [Red Team: Security Assessment](#red-team-security-assessment)
-   - [Recon: Describing the Target](#recon-describing-the-target)
-   - [Vulnerability Assessment](#vulnerability-assessment)
-   - [Exploitation](#exploitation)
+   1. [Recon: Describing the Target](#recon-describing-the-target)
+   2. [Vulnerability Assessment](#vulnerability-assessment)
+   3. [Exploitation](#exploitation)
 3. [Blue Team: Log Analysis and Mitigation Strategies](#blue-team-log-analysis-and-mitigation-strategies)
-   - [Log Analysis](#log-analysis)
-   - [Proposed Alarms and Mitigation Strategies](#proposed-alarms-and-mitigation-strategies)
+   1. [Log Analysis](#log-analysis)
+   2. [Proposed Alarms and Mitigation Strategies](#proposed-alarms-and-mitigation-strategies)
  
 
 ## **Network Topology**

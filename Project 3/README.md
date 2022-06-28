@@ -15,7 +15,7 @@
 
 ## Network Topology
 
-The following machines wre identified on the network:
+The following machines were identified on the network:
 
 | Virtual machine  | OS         | IP Address    | Purpose         |
 |------------------|------------|---------------|-----------------|
@@ -47,7 +47,7 @@ The excessive HTTP errors alert is implemented as follows:
 - Metric: HTTP response code
 - Threshold: codes above 400
 - Vulnerability Mitigated: Brute force/Enumeration.
-- Reliability: High reliability, when we measure by HTTP response status code we are able to filter possible errors. Response codes between 400 and 599 are client and server error codes. A response code within this range could indicate an attack.
+- Reliability: High reliability, when we measure by HTTP response status code we can filter possible errors. Response codes between 400 and 599 are client and server error codes. A response code within this range could indicate an attack.
 
 ![Excessive HTTP errors image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Blue/Excessive%20HTTP%20Errors%20-%20alert%20history.png)
 
@@ -57,8 +57,8 @@ The HTTP request size monitor alert is implemented as follows:
 
 - Metric: HTTP request bytes
 - Threshold: Above 3500
-- Vulnerability Mitigated: DDoS and Code Injection in HTTP request (XSS). 
-- Reliability: Low reliability, the alert is prone to frequent false positives as there are non-malicous requests above 3500 bytes as we can see from the image below. This alert will need more testing in order to determine the correct threshold in order for it to be more reliable.
+- Vulnerability Mitigated: DDoS and Code Injection in the HTTP request (XSS). 
+- Reliability: Low reliability, the alert is prone to frequent false positives as there are non-malicious requests above 3500 bytes as we can see from the image below. This alert will need more testing to determine the correct threshold for it to be more reliable.
 
 ![HTTP request size image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Blue/HTTP%20Request%20Size%20Monitor%20-%20alert%20history.png)
 
@@ -69,7 +69,7 @@ The CPU usage monitor alert is implemented as follows:
 - Metric: Total amount of system CPU usage by processes
 - Threshold: above 0.5 (50%)
 - Vulnerability Mitigated: Malicious software/programs using CPU resources.
-- Reliability: High reliability, measuring by CPU usage allows us to determine if malware is attempting to compromise the system.
+- Reliability: High reliability, measured by CPU usage allows us to determine if malware is attempting to compromise the system.
 
 ![CPU Usage image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Blue/CPU%20Usage%20Monitor%20-%20alert%20history.png)
 
@@ -79,7 +79,7 @@ The logs and alerts generated during the assessment suggest that this network is
 
 - WordPress user enumeration
    - Patch: WordPress information obfuscation
-   - Why it Works: Remove or disable files containing sensitive information can slow down attackers when attempting to gather information regarding the platform. A few of the files that will need to be re-configured are:
+   - Why it Works: Removing or disabling files containing sensitive information can slow down attackers when attempting to gather information regarding the platform. A few of the files that will need to be re-configured are:
      - xmlrpc.php
      - ?authors=
      - readme.html
@@ -87,15 +87,15 @@ The logs and alerts generated during the assessment suggest that this network is
 
 - Vulnerable SSH Authentication
    - Patch: MFA implementation
-   - Why it Works: MFA prevents brute force attacks by requiring a second authentication factor in order to successfully use login credentials.
+   - Why it Works: MFA prevents brute force attacks by requiring a second authentication factor to successfully use login credentials.
 
 - Server Sensitive Data Exposure
-   - Patch: Restric access to wp-config.php file
-   - Why it Works: the file has a default location by moving the file to a file outside of the wordpress installation and restricting file permissions we can ensure it is not accessed by unauthorized users.
+   - Patch: Restric access to the wp-config.php file
+   - Why it Works: the file has a default location by moving the file to a file outside of the WordPress installation and restricting file permissions we can ensure it is not accessed by unauthorized users.
 
 - MySQL Access
    - Patch: Implement encryption protocol/MFA
-   - Why it Works: By using encryption protocols, data breaches are less likely to happen. Cybercriminals are therefore unable to access the data even if they get their hands on it. multi-factor authentication will also prevent any unauthorized user from access the database directly.
+   - Why it Works: By using encryption protocols, data breaches are less likely to happen. Cybercriminals are therefore unable to access the data even if they get their hands on it. multi-factor authentication will also prevent any unauthorized user from accessing the database directly.
 
 # Red Team: Summary of Operations
 
@@ -105,7 +105,7 @@ Nmap scan results for the target machine reveal the below services and OS detail
 
 ![nmap scan image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Red/nmap%20-Pn%20-sV%20192.168.1.110.png)
 
-This scan identifies the services belwo as potential points of entry:
+This scan identifies the services below as potential points of entry:
 
 | Port | Service     |
 |------|-------------|

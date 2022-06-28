@@ -12,6 +12,8 @@
    2. [Critical Vulnerabilities](#critical-vulnerabilities)
    3. [Exploitation](#exploitation) 
 4. [Network Analysis](#network-analysis)
+   1. [Time Thieves](#time-thieves)
+   2. [Vulnerable Windows Machines](#vulnerable-windows-machines)
 
 ## Network Topology
 
@@ -190,3 +192,38 @@ The Red Team was able to penetrate Target 1 and retrive the following confidenti
 
 # Network Analysis
 
+## Time Thieves
+
+At least two users on the network have been wasting time on YouTube. Usually, IT wouldn't pay much mind to this behavior, but it seems these people have created their own web server on the corporate network. So far, Security knows the following about these time thieves:
+
+- They have setup an Active Directory network.
+- They are constantly watching videos on YouTube.
+- Their IP addresses are somewhere in the range 10.6.12.0/24.
+
+You must inspect your traffic capture to answer the following questions:
+
+1. What is the domain name of the users custom site?
+
+Answer: Frank-n-Ted-DC.frank-n-ted.com
+
+![Q1 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/Domain%20Controller.png)
+
+2. What is the IP address of the Domain Controller (DC) of the AD network?
+
+Answer: 10.6.12.12
+
+![Q2 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/dc_ip.png)
+
+3. What is the name of the malware downloaded to the 10.6.12.203 machine? Once you have found the file, export it to your Kali machine's desktop.
+
+Answer: june11.dll
+
+![Q3 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/malicious%20file.png)
+
+4. Upload the file to VirusTotal.com. What kind of malware is this classified as?
+
+Answer: the site classifed the malware as a Trojan.
+
+![Q4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Network%20Analysis/virustotal.png)
+
+## Vulnerable Windows Machines

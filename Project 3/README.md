@@ -186,4 +186,4 @@ The Red Team was able to penetrate Target 1 and retrive the following confidenti
       - sudo python -c 'import os; os.system("/bin/bash")'
    - Location: /root/flag4.txt
    
-![flag4 image]()
+![flag4 image](https://github.com/reyesgo/cybersec-project-docs/blob/main/Project%203/Images/Red/flag4.png)

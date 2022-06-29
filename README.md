@@ -79,8 +79,8 @@ Red vs Blue team Objectives
 - Configured alerts proposed in Kibana from Project 2.
 - Enumerated, exploited, and escalated privileges through a vulnerable web server using WordPress on a virtual machine.
 - Captured flags on the victim machine.
-- Created and submitted an offensive red team analysis report.
-- Created and submitted a defensive blue team analysis report.
+- Created an offensive red team analysis report.
+- Created a defensive blue team analysis report.
 
 Network Forensics Objectives
 

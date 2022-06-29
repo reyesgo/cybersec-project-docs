@@ -10,7 +10,7 @@ Setup a cloud monitoring system by configuring an ELK Stack Server in a Microsof
 
 - Created and configured virtual network.
 - Created and configured virtual machines in a cloud network.
-- Created Ansible playbook to install and configure ELK server.
+- Created Ansible playbooks to install and configure an ELK server.
 - Installed and launched Docker containers to virtual machines.
 - Created Ansible playbook to install and configure Filebeat and Metricbeat.
 - Created a diagram of the network and documented the process.
@@ -77,7 +77,7 @@ This project is a continuation of Project 2. As the Red Team, I attacked a diffe
 Red vs Blue team Objectives
 
 - Configured alerts proposed in Kibana from Project 2.
-- Enumerated, exploited, and escalated privileges through a vulnerable web server using WordpPress on a virtual machine.
+- Enumerated, exploited, and escalated privileges through a vulnerable web server using WordPress on a virtual machine.
 - Captured flags on the victim machine.
 - Created and submitted an offensive red team analysis report.
 - Created and submitted a defensive blue team analysis report.
